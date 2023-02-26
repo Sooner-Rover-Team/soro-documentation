@@ -20,8 +20,8 @@ You should only have to do this once, but keep it in mind...
 Clone the repo:
 
 ```sh
-$ git clone git@github.com:MichaelCurrin/mdbook-quickstart.git
-$ cd mdbook-quickstart
+$ git clone https://github.com/Sooner-Rover-Team/soro-documentation
+$ cd soro-documentation
 ```
 
 ### Install hooks
@@ -45,7 +45,7 @@ $ make install
 To start make changes to the book, navigate to the repo so you can run the `make` commands.
 
 ```sh
-$ cd mdbook-quickstart
+$ cd soro-documentation
 ```
 
 ### View available make commands
