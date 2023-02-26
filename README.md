@@ -91,3 +91,17 @@ See the workflow on GitHub:
 See workflow runs here:
 
 - [Actions](https://github.com/Sooner-Rover-Team/soro-documentation/actions) tab
+
+## Documentation
+
+Once you've done these things, you can finally start adding to the book.
+
+### SUMMARY.md
+
+The most important part of mdBook and this project is editing SUMMARY.md. It lets mdBook know how to generate the rest of the book. 
+
+To know what to do, you'll want to follow [this guide](https://rust-lang.github.io/mdBook/format/summary.html) from mdBook's official documentation.
+
+### Other pages
+
+The rest of this book just requires you to write markdown files. If you can write Slack or GitHub messages, then you already know markdown. But just in case, [here's a cheatsheet](https://www.markdownguide.org/cheat-sheet/) and an [inclusive example page](https://learnxinyminutes.com/docs/markdown/)!
