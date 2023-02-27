@@ -10,7 +10,7 @@ The developers of the camera have provided offical docs for python, as well as e
 
 Some libaries of note are:
 
-ZED SDK:[Zed SDK homepage])(https://www.stereolabs.com/developers/release/) 
+ZED SDK:[Zed SDK homepage](https://www.stereolabs.com/developers/release/) 
 OpenCV:[OpenCV Homepage](https://opencv.org/)
 
 C++ Usage: 
