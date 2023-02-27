@@ -13,7 +13,7 @@ Some libaries of note are:
 ### ZED SDK:[Zed SDK homepage](https://www.stereolabs.com/developers/release/) 
 ### OpenCV:[OpenCV Homepage](https://opencv.org/)
 
-# C++ Usage: 
+## C++ Usage: 
 
 The developers of the camera have also provided offical docs for C++, however the libaries are the same.
 
