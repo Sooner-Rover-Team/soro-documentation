@@ -10,11 +10,10 @@ All technical specifications can be found here at: [JetsonSpecs](https://develop
 
 ## Software
 
-Nvidia JetPack SDK [developer tools for Jetson](https://developer.nvidia.com/embedded/jetpack)
-Developer tool kit for building ai applications. Includes the linux kernel as well as the ubuntu desktop enviroment.
-
-TensorFlow [TensorFlow Guides](https://www.tensorflow.org/guide)
-PyTorch [PyTorch Guide](https://pytorch.org/)
-Caffe [Caffe Homepage](https://caffe.berkeleyvision.org/)
-OpenCV [OpenCV Homepage](https://opencv.org/)
-NumPy [NumPy Homepage](https://numpy.org/)
+- [NVIDIA Jetpack SDK](https://developer.nvidia.com/embedded/jetpack)
+Developer tools for the Jetson. It acts as a toolkit for building AI applications. Includes the Linux kernel as well as Ubuntu's desktop enviroment.
+- [TensorFlow Guides](https://www.tensorflow.org/guide)
+- [PyTorch Guide](https://pytorch.org/)
+- [Caffe Homepage](https://caffe.berkeleyvision.org/)
+- [OpenCV Homepage](https://opencv.org/)
+- [NumPy Homepage](https://numpy.org/)
