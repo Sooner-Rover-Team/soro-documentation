@@ -4,7 +4,7 @@
 
 # Autonomous
 
-- [Usage](Autonomous/FARTS.md)
+- [Usage](Autonomous/Usage.md)
 - [Hardware](Autonomous/Hardware/README.md)
     - [GPS-RTK2](Autonomous/Hardware/GPS-RTK2.md)
     - [Jetson](Autonomous/Hardware/Jetson.md)
