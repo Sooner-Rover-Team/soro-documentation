@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Book Layout</a></li><li class="chapter-item expanded affix "><li class="part-title">Autonomous</li><li class="chapter-item expanded "><a href="Autonomous/Usage.html"><strong aria-hidden="true">1.</strong> Usage</a></li><li class="chapter-item expanded "><a href="Autonomous/Hardware/index.html"><strong aria-hidden="true">2.</strong> Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Autonomous/Hardware/GPS-RTK2.html"><strong aria-hidden="true">2.1.</strong> GPS-RTK2</a></li><li class="chapter-item expanded "><a href="Autonomous/Hardware/Jetson.html"><strong aria-hidden="true">2.2.</strong> Jetson</a></li></ol></li><li class="chapter-item expanded "><a href="Autonomous/Software/index.html"><strong aria-hidden="true">3.</strong> Software</a></li><li class="chapter-item expanded "><a href="Autonomous/Guides/index.html"><strong aria-hidden="true">4.</strong> Guides</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Book Layout</a></li><li class="chapter-item expanded affix "><li class="part-title">Autonomous</li><li class="chapter-item expanded "><a href="Autonomous/Usage.html"><strong aria-hidden="true">1.</strong> Usage</a></li><li class="chapter-item expanded "><a href="Autonomous/Hardware/index.html"><strong aria-hidden="true">2.</strong> Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Autonomous/Hardware/GPS-RTK2.html"><strong aria-hidden="true">2.1.</strong> GPS-RTK2</a></li><li class="chapter-item expanded "><a href="Autonomous/Hardware/Jetson.html"><strong aria-hidden="true">2.2.</strong> Jetson</a></li></ol></li><li class="chapter-item expanded "><a href="Autonomous/Software/index.html"><strong aria-hidden="true">3.</strong> Software</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Autonomous/Software/sender-grabber-protocol.html"><strong aria-hidden="true">3.1.</strong> Sender-Grabber Protocol</a></li></ol></li><li class="chapter-item expanded "><a href="Autonomous/Guides/index.html"><strong aria-hidden="true">4.</strong> Guides</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -166,12 +166,35 @@
 <p>Here, you'll find general <em>guides</em> about how to do useful things. They don't have to be related to your projects - just something that's helpful to share.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hardware-1"><a class="header" href="#hardware-1">Hardware</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="gps-rtk2"><a class="header" href="#gps-rtk2">GPS-RTK2</a></h1>
+<p>The GPS-RTK2, sometimes called the ZED-F9P after its receiver chip, is a GNSS (global navigation satellite system) board that works to provide wide locational data. It supports RTK for error-correction, allowing it to pinpoint location down to around 10mm of accuracy.</p>
+<h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
+<p>To use the board, you'll need to connect up an antenna. Currently, we're using a Swift GPS500 to receive our GPS data, but it may or may not work correctly. Sparkfun's <a href="https://learn.sparkfun.com/tutorials/gps-rtk2-hookup-guide">Hookup Guide</a> is pretty good, so take a look there!</p>
+<h3 id="software-1"><a class="header" href="#software-1">Software</a></h3>
+<p>While you can use proprietary software to view the information given by the board, it's probably a better idea to stick to modern, open source software instead.</p>
+<p>In particular, using <code>gpsd</code> in the background along with <code>gpsmon</code> to display the data graphically in your terminal will help you see how things are working.</p>
+<p>To install gpsd and gpsmon, use your package manager to install its package(s).</p>
+<p><strong>Fedora, CentOS, and RHEL</strong>:
+<code>sudo dnf install gpsd</code></p>
+<p><strong>Ubuntu, Debian, and Pop!_OS</strong>:
+<code>sudo apt install gpsd</code></p>
+<p><strong>macOS</strong>:
+<code>brew install gpsd</code></p>
+<p><strong>Windows</strong>:
+<a href="https://gpsd.gitlab.io/gpsd/installation.html#_special_notes_for_windows">Use WSL, bud.</a> I suggest either Fedora or Ubuntu like above :)</p>
+<h3 id="connecting"><a class="header" href="#connecting">Connecting</a></h3>
+<p>To connect to the RTK2 with <code>gpsd</code>, run these commands:</p>
+<pre><code class="language-bash">$ sudo gpsd /dev/ttyACM0 -F /var/run/gpsd.sock
+# it probably won't say anything
+$ sudo gpsmon /dev/ttyACM0
+# and it'll go into a little terminal ui
+</code></pre>
+<p>You may have to replace <code>/dev/ttyACM0</code> with <code>/dev/ttyUSB0</code>, or something else...</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jetson-nano"><a class="header" href="#jetson-nano">Jetson Nano</a></h1>
 <h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
 <p>The Jetson Nano is a small computer designed by Nvidia for AI and machine learning applications. Its a low power usage machine meaning that our battery systems are well established. We are already employing this machine as of 2/27/23.</p>
 <h2 id="technical-specifications"><a class="header" href="#technical-specifications">Technical Specifications</a></h2>
 <p>All technical specifications can be found here at: <a href="https://developer.nvidia.com/embedded/jetson-nano-developer-kit">JetsonSpecs</a></p>
-<h2 id="software-1"><a class="header" href="#software-1">Software</a></h2>
+<h2 id="software-2"><a class="header" href="#software-2">Software</a></h2>
 <ul>
 <li><a href="https://developer.nvidia.com/embedded/jetpack">NVIDIA Jetpack SDK</a>
 Developer tools for the Jetson. It acts as a toolkit for building AI applications. Includes the Linux kernel as well as Ubuntu's desktop enviroment.</li>
@@ -181,7 +204,63 @@ Developer tools for the Jetson. It acts as a toolkit for building AI application
 <li><a href="https://opencv.org/">OpenCV Homepage</a></li>
 <li><a href="https://numpy.org/">NumPy Homepage</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="software-2"><a class="header" href="#software-2">Software</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="software-3"><a class="header" href="#software-3">Software</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sender-grabber-protocol-sgp"><a class="header" href="#sender-grabber-protocol-sgp">Sender-Grabber Protocol (SGP)</a></h1>
+<p>The <strong>Sender-Grabber Protocol</strong> is a list of Promises<sup class="footnote-reference"><a href="#note">1</a></sup> that the Rover (sender) and RoverGUI (grabber) must keep when exchanging commands and information.</p>
+<p>While the Protocol works as a way to transmit information like commands, it isn't expected to be used with a video stream itself. Please encode images/video in freely-available formats which are well-designed already, like <a href="https://en.wikipedia.org/wiki/WebP">WebP</a> and <a href="https://en.wikipedia.org/wiki/AV1#Software_support">AV1</a>.</p>
+<h2 id="whats-going-on"><a class="header" href="#whats-going-on">What's going on?</a></h2>
+<p><code>Promises</code> describe the details of how data should be sent and recieved, with each <code>Call</code> acting as a direct implementation of a certain <code>Promise</code>. In other words, you write the code to keep your promises!</p>
+<p>Each <code>Call</code> must be compatible on both ends of the tunnel. Finally, the <code>Background</code> represents additional details of the protocol.</p>
+<h2 id="prototyping"><a class="header" href="#prototyping">Prototyping</a></h2>
+<p>Before we settle on any <code>Promises</code>, we need to take into consideration that our needs will change in the future. For this reason, the <code>Background</code> details should be loose. You can see a full list of some <a href="https://en.wikipedia.org/wiki/Communication_protocol#Basic_requirements">important considerations here</a>.</p>
+<h3 id="initial-goals"><a class="header" href="#initial-goals">Initial Goals</a></h3>
+<p>However, just keep in mind some initial goals for now. We need <code>Promises</code> for:</p>
+<ul>
+<li>Changing the FPS</li>
+<li>Stopping a camera</li>
+<li>Starting a camera</li>
+<li>Changing cameras</li>
+<li>Encoding/quality options (oh boy)</li>
+</ul>
+<p>Keep in mind that having these options up here <strong>require</strong> documenting them as you add them into your programs. If you change the way encoding works, and it's not compatible with the protocol, you'll need to document your changes and make the protocol aware of that.</p>
+<p>I highly suggest researching libraries first, then sticking to your choices.</p>
+<h3 id="future-ideas"><a class="header" href="#future-ideas">Future Ideas</a></h3>
+<p>Some other useful ideas could be around:</p>
+<ul>
+<li>The internet connection</li>
+<li>Remaining battery</li>
+<li>Current operation/modes</li>
+<li>Settings</li>
+<li>User profiles</li>
+<li>Connected devices (controller status)</li>
+<li>Error logging</li>
+</ul>
+<p>It's not a good idea to implement these yet, but it'd be nice to get some brainstorming going.</p>
+<h2 id="versioning"><a class="header" href="#versioning">Versioning</a></h2>
+<p>To keep everything simple, we're just going to use Semantic Versioning. If you're new to this, npm has <a href="https://docs.npmjs.com/about-semantic-versioning">a great guide</a> which is super easy to read and understand!</p>
+<p>In general, the <code>Versioning</code> information only stands to disallow older programs from talking to the Rover and returns an error when we try.</p>
+<p>This should help to avoid a lot of confusion down the line. <strong>Always aim to keep both the Python and Rust implementations up-to-date with each other.</strong></p>
+<h2 id="calls"><a class="header" href="#calls">Calls</a></h2>
+<p>// TODO :)</p>
+<h2 id="environment"><a class="header" href="#environment">Environment</a></h2>
+<p>// TODO :)</p>
+<h2 id="changelog"><a class="header" href="#changelog">Changelog</a></h2>
+<ul>
+<li><strong>0.0.0</strong>: Nothing
+<ul>
+<li>The base release of the protocol.</li>
+<li>Nothing has been added, and there is no protocol!
+<ul>
+<li>Very simple release</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="footnotes"><a class="header" href="#footnotes">Footnotes</a></h2>
+<div class="footnote-definition" id="note"><sup class="footnote-definition-label">1</sup>
+<p><code>Promises</code> in SGP are not related to those in Javascript or other languages. They're &quot;promises&quot; in the everyday sense of the word. ex: &quot;I promise that I will change cameras.&quot;</p>
+</div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="guides-1"><a class="header" href="#guides-1">Guides</a></h1>
 
                     </main>

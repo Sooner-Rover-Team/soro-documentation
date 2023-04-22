@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Book Layout</a></li><li class="chapter-item expanded affix "><li class="part-title">Autonomous</li><li class="chapter-item expanded "><a href="../../Autonomous/Usage.html"><strong aria-hidden="true">1.</strong> Usage</a></li><li class="chapter-item expanded "><a href="../../Autonomous/Hardware/index.html"><strong aria-hidden="true">2.</strong> Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Autonomous/Hardware/GPS-RTK2.html" class="active"><strong aria-hidden="true">2.1.</strong> GPS-RTK2</a></li><li class="chapter-item expanded "><a href="../../Autonomous/Hardware/Jetson.html"><strong aria-hidden="true">2.2.</strong> Jetson</a></li></ol></li><li class="chapter-item expanded "><a href="../../Autonomous/Software/index.html"><strong aria-hidden="true">3.</strong> Software</a></li><li class="chapter-item expanded "><a href="../../Autonomous/Guides/index.html"><strong aria-hidden="true">4.</strong> Guides</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Book Layout</a></li><li class="chapter-item expanded affix "><li class="part-title">Autonomous</li><li class="chapter-item expanded "><a href="../../Autonomous/Usage.html"><strong aria-hidden="true">1.</strong> Usage</a></li><li class="chapter-item expanded "><a href="../../Autonomous/Hardware/index.html"><strong aria-hidden="true">2.</strong> Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Autonomous/Hardware/GPS-RTK2.html" class="active"><strong aria-hidden="true">2.1.</strong> GPS-RTK2</a></li><li class="chapter-item expanded "><a href="../../Autonomous/Hardware/Jetson.html"><strong aria-hidden="true">2.2.</strong> Jetson</a></li></ol></li><li class="chapter-item expanded "><a href="../../Autonomous/Software/index.html"><strong aria-hidden="true">3.</strong> Software</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Autonomous/Software/sender-grabber-protocol.html"><strong aria-hidden="true">3.1.</strong> Sender-Grabber Protocol</a></li></ol></li><li class="chapter-item expanded "><a href="../../Autonomous/Guides/index.html"><strong aria-hidden="true">4.</strong> Guides</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -145,6 +145,29 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="gps-rtk2"><a class="header" href="#gps-rtk2">GPS-RTK2</a></h1>
+<p>The GPS-RTK2, sometimes called the ZED-F9P after its receiver chip, is a GNSS (global navigation satellite system) board that works to provide wide locational data. It supports RTK for error-correction, allowing it to pinpoint location down to around 10mm of accuracy.</p>
+<h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
+<p>To use the board, you'll need to connect up an antenna. Currently, we're using a Swift GPS500 to receive our GPS data, but it may or may not work correctly. Sparkfun's <a href="https://learn.sparkfun.com/tutorials/gps-rtk2-hookup-guide">Hookup Guide</a> is pretty good, so take a look there!</p>
+<h3 id="software"><a class="header" href="#software">Software</a></h3>
+<p>While you can use proprietary software to view the information given by the board, it's probably a better idea to stick to modern, open source software instead.</p>
+<p>In particular, using <code>gpsd</code> in the background along with <code>gpsmon</code> to display the data graphically in your terminal will help you see how things are working.</p>
+<p>To install gpsd and gpsmon, use your package manager to install its package(s).</p>
+<p><strong>Fedora, CentOS, and RHEL</strong>:
+<code>sudo dnf install gpsd</code></p>
+<p><strong>Ubuntu, Debian, and Pop!_OS</strong>:
+<code>sudo apt install gpsd</code></p>
+<p><strong>macOS</strong>:
+<code>brew install gpsd</code></p>
+<p><strong>Windows</strong>:
+<a href="https://gpsd.gitlab.io/gpsd/installation.html#_special_notes_for_windows">Use WSL, bud.</a> I suggest either Fedora or Ubuntu like above :)</p>
+<h3 id="connecting"><a class="header" href="#connecting">Connecting</a></h3>
+<p>To connect to the RTK2 with <code>gpsd</code>, run these commands:</p>
+<pre><code class="language-bash">$ sudo gpsd /dev/ttyACM0 -F /var/run/gpsd.sock
+# it probably won't say anything
+$ sudo gpsmon /dev/ttyACM0
+# and it'll go into a little terminal ui
+</code></pre>
+<p>You may have to replace <code>/dev/ttyACM0</code> with <code>/dev/ttyUSB0</code>, or something else...</p>
 
                     </main>
 
