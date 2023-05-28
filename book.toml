@@ -5,9 +5,12 @@ multilingual = false
 src = "src"
 title = "The Sooner Rover Team Guidebook"
 
+[build]
+use-default-preprocessors = false
+
+[preprocessor.links]
+
 [output.html]
 
 [output.linkcheck]
 
-[preprocessor.index]
-[preprocessor.links] # fixes broken sublinks

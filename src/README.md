@@ -6,7 +6,7 @@ Each section of the book represents a subteam. Members of each team should docum
 
 ## Sections
 
-### [Autonomous](Autonomous)
+### [Autonomous](Autonomous/README.md)
 
 The Autonomous subteam works on various different types of procedure for the rover. Implementing these procedures allows the rover to do tasks intelligently.
 
