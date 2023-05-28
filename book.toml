@@ -4,3 +4,7 @@ language = "en"
 multilingual = false
 src = "src"
 title = "The Sooner Rover Team Guidebook"
+
+[output.html]
+
+[output.linkcheck]

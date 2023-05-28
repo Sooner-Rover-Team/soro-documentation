@@ -13,6 +13,7 @@ hooks:
 
 install:
 	cargo install mdbook
+	cargo install mdbook-linkcheck
 
 
 s serve:
