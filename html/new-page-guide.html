@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Book Layout - The Sooner Rover Team Guidebook</title>
+        <title>New Page Guide - The Sooner Rover Team Guidebook</title>
 
 
         <!-- Custom HTML head -->
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html" class="active">Book Layout</a></li><li class="chapter-item expanded affix "><li class="part-title">Autonomous</li><li class="chapter-item expanded "><a href="Autonomous/Usage.html"><strong aria-hidden="true">1.</strong> Usage</a></li><li class="chapter-item expanded "><a href="Autonomous/Hardware/index.html"><strong aria-hidden="true">2.</strong> Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Autonomous/Hardware/GPS-RTK2.html"><strong aria-hidden="true">2.1.</strong> GPS-RTK2</a></li><li class="chapter-item expanded "><a href="Autonomous/Hardware/Jetson.html"><strong aria-hidden="true">2.2.</strong> Jetson</a></li></ol></li><li class="chapter-item expanded "><a href="Autonomous/Software/index.html"><strong aria-hidden="true">3.</strong> Software</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Autonomous/Software/sender-grabber-protocol.html"><strong aria-hidden="true">3.1.</strong> Sender-Grabber Protocol</a></li></ol></li><li class="chapter-item expanded "><a href="Autonomous/Guides/index.html"><strong aria-hidden="true">4.</strong> Guides</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Book Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="new-page-guide.html" class="active"><strong aria-hidden="true">1.1.</strong> New Page Guide</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Autonomous</li><li class="chapter-item expanded "><a href="Autonomous/index.html"><strong aria-hidden="true">2.</strong> Usage</a></li><li class="chapter-item expanded "><a href="Autonomous/Hardware/index.html"><strong aria-hidden="true">3.</strong> Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Autonomous/Hardware/GPS-RTK2.html"><strong aria-hidden="true">3.1.</strong> GPS-RTK2</a></li><li class="chapter-item expanded "><a href="Autonomous/Hardware/Jetson.html"><strong aria-hidden="true">3.2.</strong> Jetson</a></li></ol></li><li class="chapter-item expanded "><a href="Autonomous/Software/index.html"><strong aria-hidden="true">4.</strong> Software</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Autonomous/Software/sender-grabber-protocol.html"><strong aria-hidden="true">4.1.</strong> Sender-Grabber Protocol</a></li></ol></li><li class="chapter-item expanded "><a href="Autonomous/Guides/index.html"><strong aria-hidden="true">5.</strong> Guides</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -144,22 +144,64 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="book-layout"><a class="header" href="#book-layout">Book Layout</a></h1>
-<p>This &quot;book&quot; contains documentation from all subteams. It aims to organize known information about all kinds of topics so they are easier to learn about and pass down.</p>
-<p>Each section of the book represents a subteam. Members of each team should document important operations, hardware, and topic that they work on.</p>
-<h2 id="sections"><a class="header" href="#sections">Sections</a></h2>
-<h3 id="autonomous"><a class="header" href="#autonomous"><a href="Autonomous/Usage.html">Autonomous</a></a></h3>
-<p>The Autonomous subteam works on various different types of procedure for the rover. Implementing these procedures allows the rover to do tasks intelligently.</p>
-<h3 id="mechanical"><a class="header" href="#mechanical"><a href="">Mechanical</a></a></h3>
-<h3 id="electrical"><a class="header" href="#electrical"><a href="">Electrical</a></a></h3>
-<h3 id="science"><a class="header" href="#science"><a href="">Science</a></a></h3>
+                        <h1 id="new-page-guide"><a class="header" href="#new-page-guide">New Page Guide</a></h1>
+<p>This book is composed of many different pages from a lot of different people!</p>
+<p>If you want to contribute, you only need to make a new file and connect it to the book.</p>
+<h2 id="downloading-the-book"><a class="header" href="#downloading-the-book">Downloading the Book</a></h2>
+<p>To contribute to the book, you'll need to download the book. Go to your Documents folder in your terminal, then download its git repository:</p>
+<pre><code class="language-bash">~ $ cd Documents
+
+~/Documents $ git clone https://github.com/Sooner-Rover-Team/soro-documentation.git
+Cloning into 'soro-documentation'...
+remote: Enumerating objects: 269, done.
+remote: Counting objects: 100% (269/269), done.
+remote: Compressing objects: 100% (161/161), done.
+remote: Total 269 (delta 121), reused 217 (delta 85), pack-reused 0
+Receiving objects: 100% (269/269), 1.10 MiB | 1002.00 KiB/s, done.
+Resolving deltas: 100% (121/121), done.
+
+~/Documents $ cd soro-documentation
+
+~/D/soro-documentation $
+</code></pre>
+<h2 id="making-a-new-page"><a class="header" href="#making-a-new-page">Making a New Page</a></h2>
+<p>To make a new page, open up a terminal:</p>
+<pre><code class="language-bash">~D/soro-handbook $ pwd
+~/Documents/soro-handbook/(somewhere)
+
+~D/soro-handbook $ touch new-page-name.md
+
+~D/soro-handbook $ code new-page-name.md
+Opening VSCode...
+</code></pre>
+<p>You should now have a new page! Now, let's connect it to the rest of the book with <code>SUMMARY.md</code>:</p>
+<pre><code class="language-bash">~ $ cd ~/Documents/soro-handbook
+
+~/D/soro-handbook $ code SUMMARY.md
+Opening VSCode...
+</code></pre>
+<p>Now, you just write where your page is!</p>
+<pre><code class="language-Markdown">...
+# Autonomous
+
+- [Usage](Autonomous/Usage.md)
+- [Hardware](Autonomous/Hardware/README.md)
+- [My New Page](new-page-name.md) &lt;!--- new page here --&gt;
+...
+</code></pre>
+<h3 id="submitting-changes"><a class="header" href="#submitting-changes">Submitting Changes</a></h3>
+<p>We use <code>git</code> to manage new versions of the book. There's not enough space to teach git here, but you can refer to <a href="https://rogerdudler.github.io/git-guide/">Git - The Simple Guide</a> and W3's <a href="https://www.w3schools.com/git/">Git Tutorial</a> for some tips.</p>
+<p>Please make sure to use a PR (pull request) for significant changes! :)</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
-                            <a rel="next" href="Autonomous/Usage.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="Autonomous/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -169,8 +211,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
-                    <a rel="next" href="Autonomous/Usage.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="Autonomous/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

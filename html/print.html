@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Book Layout</a></li><li class="chapter-item expanded affix "><li class="part-title">Autonomous</li><li class="chapter-item expanded "><a href="Autonomous/Usage.html"><strong aria-hidden="true">1.</strong> Usage</a></li><li class="chapter-item expanded "><a href="Autonomous/Hardware/index.html"><strong aria-hidden="true">2.</strong> Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Autonomous/Hardware/GPS-RTK2.html"><strong aria-hidden="true">2.1.</strong> GPS-RTK2</a></li><li class="chapter-item expanded "><a href="Autonomous/Hardware/Jetson.html"><strong aria-hidden="true">2.2.</strong> Jetson</a></li></ol></li><li class="chapter-item expanded "><a href="Autonomous/Software/index.html"><strong aria-hidden="true">3.</strong> Software</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Autonomous/Software/sender-grabber-protocol.html"><strong aria-hidden="true">3.1.</strong> Sender-Grabber Protocol</a></li></ol></li><li class="chapter-item expanded "><a href="Autonomous/Guides/index.html"><strong aria-hidden="true">4.</strong> Guides</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Book Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="new-page-guide.html"><strong aria-hidden="true">1.1.</strong> New Page Guide</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Autonomous</li><li class="chapter-item expanded "><a href="Autonomous/index.html"><strong aria-hidden="true">2.</strong> Usage</a></li><li class="chapter-item expanded "><a href="Autonomous/Hardware/index.html"><strong aria-hidden="true">3.</strong> Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Autonomous/Hardware/GPS-RTK2.html"><strong aria-hidden="true">3.1.</strong> GPS-RTK2</a></li><li class="chapter-item expanded "><a href="Autonomous/Hardware/Jetson.html"><strong aria-hidden="true">3.2.</strong> Jetson</a></li></ol></li><li class="chapter-item expanded "><a href="Autonomous/Software/index.html"><strong aria-hidden="true">4.</strong> Software</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Autonomous/Software/sender-grabber-protocol.html"><strong aria-hidden="true">4.1.</strong> Sender-Grabber Protocol</a></li></ol></li><li class="chapter-item expanded "><a href="Autonomous/Guides/index.html"><strong aria-hidden="true">5.</strong> Guides</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -149,22 +149,80 @@
 <p>This &quot;book&quot; contains documentation from all subteams. It aims to organize known information about all kinds of topics so they are easier to learn about and pass down.</p>
 <p>Each section of the book represents a subteam. Members of each team should document important operations, hardware, and topic that they work on.</p>
 <h2 id="sections"><a class="header" href="#sections">Sections</a></h2>
-<h3 id="autonomous"><a class="header" href="#autonomous"><a href="Autonomous/Usage.html">Autonomous</a></a></h3>
+<h3 id="autonomous"><a class="header" href="#autonomous"><a href="Autonomous">Autonomous</a></a></h3>
 <p>The Autonomous subteam works on various different types of procedure for the rover. Implementing these procedures allows the rover to do tasks intelligently.</p>
 <h3 id="mechanical"><a class="header" href="#mechanical"><a href="">Mechanical</a></a></h3>
 <h3 id="electrical"><a class="header" href="#electrical"><a href="">Electrical</a></a></h3>
 <h3 id="science"><a class="header" href="#science"><a href="">Science</a></a></h3>
+<h2 id="adding-to-the-book"><a class="header" href="#adding-to-the-book">Adding to the Book</a></h2>
+<p>Please go ahead and follow the <a href="new-page-guide.html">New Page Guide</a>! It'll guide you through getting the book on your computer, creating your page, and putting it online!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="new-page-guide"><a class="header" href="#new-page-guide">New Page Guide</a></h1>
+<p>This book is composed of many different pages from a lot of different people!</p>
+<p>If you want to contribute, you only need to make a new file and connect it to the book.</p>
+<h2 id="downloading-the-book"><a class="header" href="#downloading-the-book">Downloading the Book</a></h2>
+<p>To contribute to the book, you'll need to download the book. Go to your Documents folder in your terminal, then download its git repository:</p>
+<pre><code class="language-bash">~ $ cd Documents
+
+~/Documents $ git clone https://github.com/Sooner-Rover-Team/soro-documentation.git
+Cloning into 'soro-documentation'...
+remote: Enumerating objects: 269, done.
+remote: Counting objects: 100% (269/269), done.
+remote: Compressing objects: 100% (161/161), done.
+remote: Total 269 (delta 121), reused 217 (delta 85), pack-reused 0
+Receiving objects: 100% (269/269), 1.10 MiB | 1002.00 KiB/s, done.
+Resolving deltas: 100% (121/121), done.
+
+~/Documents $ cd soro-documentation
+
+~/D/soro-documentation $
+</code></pre>
+<h2 id="making-a-new-page"><a class="header" href="#making-a-new-page">Making a New Page</a></h2>
+<p>To make a new page, open up a terminal:</p>
+<pre><code class="language-bash">~D/soro-handbook $ pwd
+~/Documents/soro-handbook/(somewhere)
+
+~D/soro-handbook $ touch new-page-name.md
+
+~D/soro-handbook $ code new-page-name.md
+Opening VSCode...
+</code></pre>
+<p>You should now have a new page! Now, let's connect it to the rest of the book with <code>SUMMARY.md</code>:</p>
+<pre><code class="language-bash">~ $ cd ~/Documents/soro-handbook
+
+~/D/soro-handbook $ code SUMMARY.md
+Opening VSCode...
+</code></pre>
+<p>Now, you just write where your page is!</p>
+<pre><code class="language-Markdown">...
+# Autonomous
+
+- [Usage](Autonomous/Usage.md)
+- [Hardware](Autonomous/Hardware/README.md)
+- [My New Page](new-page-name.md) &lt;!--- new page here --&gt;
+...
+</code></pre>
+<h3 id="submitting-changes"><a class="header" href="#submitting-changes">Submitting Changes</a></h3>
+<p>We use <code>git</code> to manage new versions of the book. There's not enough space to teach git here, but you can refer to <a href="https://rogerdudler.github.io/git-guide/">Git - The Simple Guide</a> and W3's <a href="https://www.w3schools.com/git/">Git Tutorial</a> for some tips.</p>
+<p>Please make sure to use a PR (pull request) for significant changes! :)</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="usage"><a class="header" href="#usage">Usage</a></h1>
 <p>Take a look at one of the sections to find what you're looking for. If you can't find something that needs to be documented, <a href="https://github.com/Sooner-Rover-Team/soro-documentation/issues">complain here</a> until someone does something.</p>
 <h2 id="sections-1"><a class="header" href="#sections-1">Sections</a></h2>
-<h3 id="software"><a class="header" href="#software"><a href="Autonomous/Software/README.html">Software</a></a></h3>
+<h3 id="software"><a class="header" href="#software"><a href="Autonomous//Autonomous/Software">Software</a></a></h3>
 <p>The software section documents how (and when) to use <em>software</em>. Preferably, it should also link to automatic documentation like <code>rustdoc</code>.</p>
-<h3 id="hardware"><a class="header" href="#hardware"><a href="Autonomous/Hardware/README.html">Hardware</a></a></h3>
+<h3 id="hardware"><a class="header" href="#hardware"><a href="Autonomous//Autonomous/Hardware">Hardware</a></a></h3>
 <p>In the <em>hardware</em> section, you'll find documentation related to hardware components from the autonomous side of things.</p>
 <p>There could be duplicates in other subteam sections, but they may be tailored to different needs.</p>
-<h3 id="guides"><a class="header" href="#guides"><a href="Autonomous/Guides/README.html">Guides</a></a></h3>
+<h3 id="guides"><a class="header" href="#guides"><a href="Autonomous//Autonomous/Guides">Guides</a></a></h3>
 <p>Here, you'll find general <em>guides</em> about how to do useful things. They don't have to be related to your projects - just something that's helpful to share.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hardware-1"><a class="header" href="#hardware-1">Hardware</a></h1>
+<p>Autonomous hardware often has to do with making the Rover do new things! For example, by using special cameras that reflect human vision, we can more accurately determine location and navigate the world!</p>
+<p>Documenting new hardware is easy! Just do the following:</p>
+<ol>
+<li>Research something you want!</li>
+<li><a href="Autonomous/Hardware/../../new-page-guide.html">Make a new page</a>!</li>
+<li>Go ahead and fill in some reasons why you want to use this! Give some information about the device and some links to resources about it.</li>
+<li>If it <a href="https://en.wikipedia.org/wiki/Robot_Operating_System">links to ROS</a>, tell Tyler so he can be excited</li>
+</ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="gps-rtk2"><a class="header" href="#gps-rtk2">GPS-RTK2</a></h1>
 <p>The GPS-RTK2, sometimes called the ZED-F9P after its receiver chip, is a GNSS (global navigation satellite system) board that works to provide wide locational data. It supports RTK for error-correction, allowing it to pinpoint location down to around 10mm of accuracy.</p>
 <h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
@@ -205,6 +263,8 @@ Developer tools for the Jetson. It acts as a toolkit for building AI application
 <li><a href="https://numpy.org/">NumPy Homepage</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-3"><a class="header" href="#software-3">Software</a></h1>
+<p>Autonomous software usually has to do with controlling and linking different parts of the Rover to work together!</p>
+<p>If you make a new application, please consider documenting it in a new page here! Just follow the <a href="Autonomous/Software/../../new-page-guide.html">New Page Guide</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="sender-grabber-protocol-sgp"><a class="header" href="#sender-grabber-protocol-sgp">Sender-Grabber Protocol (SGP)</a></h1>
 <p>The <strong>Sender-Grabber Protocol</strong> is a list of Promises<sup class="footnote-reference"><a href="#note">1</a></sup> that the Rover (sender) and RoverGUI (grabber) must keep when exchanging commands and information.</p>
 <p>While the Protocol works as a way to transmit information like commands, it isn't expected to be used with a video stream itself. Please encode images/video in freely-available formats which are well-designed already, like <a href="https://en.wikipedia.org/wiki/WebP">WebP</a> and <a href="https://en.wikipedia.org/wiki/AV1#Software_support">AV1</a>.</p>
