@@ -8,3 +8,6 @@ title = "The Sooner Rover Team Guidebook"
 [output.html]
 
 [output.linkcheck]
+
+[preprocessor.index]
+[preprocessor.links] # fixes broken sublinks
