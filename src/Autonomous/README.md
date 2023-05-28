@@ -4,16 +4,16 @@ Take a look at one of the sections to find what you're looking for. If you can't
 
 ## Sections
 
-### [Software](Autonomous/Software)
+### [Software](/Autonomous/Software)
 
 The software section documents how (and when) to use *software*. Preferably, it should also link to automatic documentation like `rustdoc`.
 
-### [Hardware](Autonomous/Hardware)
+### [Hardware](/Autonomous/Hardware)
 
 In the *hardware* section, you'll find documentation related to hardware components from the autonomous side of things.
 
 There could be duplicates in other subteam sections, but they may be tailored to different needs.
 
-### [Guides](Autonomous/Guides)
+### [Guides](/Autonomous/Guides)
 
 Here, you'll find general *guides* about how to do useful things. They don't have to be related to your projects - just something that's helpful to share.

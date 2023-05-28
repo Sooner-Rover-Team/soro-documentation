@@ -1,10 +1,11 @@
 # Summary
 
-[Book Layout](README.md)
+- [Book Layout](README.md)
+    - [New Page Guide](new-page-guide.md)
 
 # Autonomous
 
-- [Usage](Autonomous/Usage.md)
+- [Usage](Autonomous/README.md)
 - [Hardware](Autonomous/Hardware/README.md)
     - [GPS-RTK2](Autonomous/Hardware/GPS-RTK2.md)
     - [Jetson](Autonomous/Hardware/Jetson.md)
