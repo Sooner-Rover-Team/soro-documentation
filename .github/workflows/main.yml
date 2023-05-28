@@ -16,11 +16,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: Swatinem/rust-cache@v2
+        with:
+          # Determines which crates are cached.
+          # If `true` all crates will be cached, otherwise only dependent crates will be cached.
+          # Useful if additional crates are used for CI tooling.
+         cache-all-crates: "true"
+
       - name: Checkout 🛎
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install dependencies 🔧
-        run: make page-install
+        run: make install
 
       - name: Build 🏗️
         run: make build
